@@ -1,10 +1,10 @@
 const segments=[
  {key:'towel',icon:'✦',title:'Алчуур'},{key:'loss',icon:'♡',title:'Дараа дахин'},
  {key:'freshener',icon:'✿',title:'Үнэртүүлэгч'},{key:'fuel',icon:'◈',title:'Шатахууны талон'},
- {key:'foam',icon:'✧',title:'Хөөс цэвэрлэгч'},{key:'loss',icon:'♡',title:'Дараа дахин'},
+ {key:'foam',icon:'✧',title:'Хөөсөн цэвэрлэгч'},{key:'loss',icon:'♡',title:'Дараа дахин'},
  {key:'gift',icon:'◇',title:'Бэлгийн багц'},{key:'loss',icon:'♡',title:'Дараа дахин'}
 ];
-const titles={towel:'Алчуур',freshener:'Цацдаг үнэртүүлэгч',foam:'Салоны хөөс цэвэрлэгч',loss:'Энэ удаа хонжворгүй'};
+const titles={towel:'Алчуур',freshener:'Цацдаг үнэртүүлэгч',foam:'Салоны хөөсөн цэвэрлэгч',loss:'Энэ удаа хонжворгүй'};
 const key='azyn-hurd-entry-v1';
 const wheel=document.querySelector('#wheel'),button=document.querySelector('#spin'),error=document.querySelector('#error');
 const modal=document.querySelector('#result-modal');
