@@ -3,41 +3,37 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#10263b">
+  <meta name="theme-color" content="#0a1033">
   <title>Азын хүрд</title>
   <meta name="description" content="Азын хүрдээ эргүүлж, бэлгээ аваарай.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="assets/zona-bold.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="page-shell">
   <div class="hero-shell">
     <header class="header">
-      <a class="wordmark" href="/" aria-label="Азын хүрд нүүр"><span class="mark" aria-hidden="true">✳</span><span>азын хүрд<small>таны азтай мөч</small></span></a>
-      <span class="header-note"><span class="pulse"></span> Танд амжилт хүсье</span>
+      <a class="wordmark" href="/" aria-label="Сайн Моторс Азын хүрд"><img src="assets/logo.svg" alt="Сайн Моторс" width="144" height="39"></a>
+      <span class="header-note">Эрдэнэт салбарын нээлт</span>
     </header>
     <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow"><span aria-hidden="true">✦</span> Нэг эргэлт. Нэг боломж.</div>
-        <h1>Азын хүрдээ<br><em>эргүүлээрэй.</em></h1>
-        <p class="lede">Таны азтай мөч ирсэн ч юм билүү. Хүрдээ эргүүлээд ямар бэлэг хүлээж байгааг мэдээрэй.</p>
-        <div class="hero-rule"></div>
-        <div class="steps"><span class="step-number">01</span><div><strong>Хүрдээ эргүүлнэ</strong><small>Нэг хөтчөөс нэг удаа оролцоно.</small></div></div>
-        <div class="steps"><span class="step-number">02</span><div><strong>Бэлгээ авна</strong><small>Хонжвортой бол үр дүнгээ зохион байгуулагчид үзүүлээрэй.</small></div></div>
+        <h1>Азын хүрд</h1>
+        <p class="lede">Хүрдээ эргүүлээд азаа сориорой. Хонжвор таарвал үр дүнгээ зохион байгуулагчид үзүүлж, бэлгээ аваарай.</p>
       </div>
       <div class="game">
         <div class="wheel-stage" aria-label="Азын хүрдний хэсэг">
           <div class="wheel-orbit orbit-outer" aria-hidden="true"></div><div class="wheel-orbit orbit-inner" aria-hidden="true"></div>
           <div class="wheel-wrap"><div class="pointer" aria-hidden="true"></div><div class="wheel-rim"><div class="wheel" id="wheel" aria-label="Азын хүрд"><span class="hub" aria-hidden="true">✳</span></div></div></div>
         </div>
-        <button class="spin-button" id="spin" type="button">Хүрдээ эргүүлэх <span aria-hidden="true">✦</span></button>
-        <p class="game-note">Эргүүлээд өөрийн азаа сорь</p><p class="error" id="error" role="alert"></p>
+        <button class="spin-button" id="spin" type="button">Хүрдээ эргүүлэх</button>
+        <p class="game-note">Нэг хөтчөөс нэг удаа оролцоно.</p>
+        <p class="error" id="error" role="alert"></p>
       </div>
     </section>
   </div>
   <section class="prizes" aria-labelledby="prizes-heading">
-    <div class="prizes-intro"><div><span class="section-tag">Таныг хүлээж буй бэлгүүд</span><h2 id="prizes-heading">Азтан болох<br>мөч ойрхон.</h2></div><p>Хонжвортой бол үр дүнгээ зохион байгуулагчид үзүүлээд бэлгээ аваарай.</p></div>
+    <h2 id="prizes-heading">Хүрдний бэлгүүд</h2>
     <div class="prize-list">
       <div class="prize-item"><span class="prize-icon mint" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M11 13h26v22H11zM11 19h26M16 24h16M16 28h16M16 32h10"/><path d="M14 13V9h20v4"/></svg></span><span class="prize-name"><strong>Алчуур</strong><small>Арчилгаанд тань</small></span></div>
       <div class="prize-item"><span class="prize-icon peach" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M17 19h14l2 19H15l2-19ZM20 19v-4h8v4M20 15v-4h12l3 3M35 10h4M36 15h5M35 20h4"/><path d="M20 27c2 2 6 2 8 0"/></svg></span><span class="prize-name"><strong>Цацдаг үнэртүүлэгч</strong><small>Шинэхэн мэдрэмж</small></span></div>
@@ -46,7 +42,7 @@
       <div class="prize-item unavailable"><span class="prize-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M11 21h26v7H11zM14 28v10h20V28M24 21v17M24 21c-8 0-11-3-9-6s7-1 9 6Zm0 0c8 0 11-3 9-6s-7-1-9 6Z"/></svg></span><span class="prize-name"><strong>Бэлгийн багц</strong></span></div>
     </div>
   </section>
-  <footer><span class="wordmark"><span class="mark" aria-hidden="true">✳</span><span>азын хүрд</span></span><span>Танд сайхан мөчийг хүсье</span></footer>
+  <footer><img src="assets/logo.svg" alt="Сайн Моторс" width="105" height="28" loading="lazy"><span>Эрдэнэт салбарын нээлт</span></footer>
   <div class="result-backdrop" id="result-modal" hidden><section class="result-card" role="dialog" aria-modal="true" aria-labelledby="result-title"><span class="result-spark" id="result-spark">✳</span><span class="result-kicker" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-copy"></p><span class="result-button">Үр дүн хадгалагдсан ✓</span></section></div>
 </main>
 <script src="app.js" defer></script>

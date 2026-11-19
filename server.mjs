@@ -9,7 +9,16 @@ const database = process.env.SPIN_DB_PATH || join(root, 'draws.sqlite');
 const host = process.env.SPIN_HOST || '127.0.0.1';
 const port = Number(process.env.SPIN_PORT || '3201');
 const store = new DrawStore(database);
-const assets = new Map([['/', ['index.html','text/html; charset=utf-8']],['/index.html', ['index.html','text/html; charset=utf-8']],['/style.css',['style.css','text/css; charset=utf-8']],['/app.js',['app.js','text/javascript; charset=utf-8']]]);
+const assets = new Map([
+  ['/', ['index.html', 'text/html; charset=utf-8']],
+  ['/index.html', ['index.html', 'text/html; charset=utf-8']],
+  ['/style.css', ['style.css', 'text/css; charset=utf-8']],
+  ['/app.js', ['app.js', 'text/javascript; charset=utf-8']],
+  ['/assets/logo.svg', ['assets/logo.svg', 'image/svg+xml']],
+  ['/assets/erdenet-showroom.jpg', ['assets/erdenet-showroom.jpg', 'image/jpeg']],
+  ['/assets/zona-bold.woff2', ['assets/zona-bold.woff2', 'font/woff2']],
+  ['/assets/inter.woff2', ['assets/inter.woff2', 'font/woff2']],
+]);
 function json(res, code, data){res.writeHead(code,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'});res.end(JSON.stringify(data))}
 const server=createServer(async(req,res)=>{
   const url=new URL(req.url || '/', 'http://localhost');

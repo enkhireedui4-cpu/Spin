@@ -8,12 +8,23 @@ const titles={towel:'Алчуур',freshener:'Цацдаг үнэртүүлэг�
 const key='azyn-hurd-entry-v1';
 const wheel=document.querySelector('#wheel'),button=document.querySelector('#spin'),error=document.querySelector('#error');
 const modal=document.querySelector('#result-modal');
-for (const [i,s] of segments.entries()) {
- const el=document.createElement('div');el.className='segment';el.style.setProperty('--angle',`${i*45+22.5}deg`);
- const icon=document.createElement('span');icon.className='segment-icon';icon.textContent=s.icon;
- const title=document.createElement('span');title.textContent=s.title;el.append(icon,title);
- if(s.key==='fuel'||s.key==='gift'){const small=document.createElement('small');small.textContent='Ороогүй';el.append(small)}
- wheel.insertBefore(el,wheel.querySelector('.hub'));
+for (const [index, segment] of segments.entries()) {
+ const angle = index * 45 + 22.5;
+ const slice = document.createElement('div');
+ slice.className = 'segment';
+ slice.style.setProperty('--angle', `${angle}deg`);
+ const label = document.createElement('div');
+ label.className = 'segment-label';
+ if (angle > 90 && angle < 270) label.classList.add('segment-label-upside');
+ const icon = document.createElement('span');
+ icon.className = 'segment-icon';
+ icon.setAttribute('aria-hidden', 'true');
+ icon.textContent = segment.icon;
+ const title = document.createElement('span');
+ title.textContent = segment.title;
+ label.append(icon, title);
+ slice.append(label);
+ wheel.insertBefore(slice, wheel.querySelector('.hub'));
 }
 function reveal(prize){
  button.disabled=true;button.textContent='Оролцсон';
@@ -46,5 +57,5 @@ button.addEventListener('click',async()=>{
   const data=await response.json();if(!response.ok||!Object.hasOwn(titles,data.prize))throw Error(data.error||'Дахин оролдоно уу.');
   const index=segments.findIndex(s=>s.key===data.prize);wheel.style.transform=`rotate(${360*6-(index*45+22.5)}deg)`;
   setTimeout(()=>reveal(data.prize),matchMedia('(prefers-reduced-motion: reduce)').matches?100:5200);
- }catch(e){error.textContent=e instanceof Error?e.message:'Түр алдаа гарлаа. Дахин оролдоно уу.';button.disabled=false;button.innerHTML='Хүрдээ эргүүлэх <span>✦</span>'}
+ }catch(e){error.textContent=e instanceof Error?e.message:'Түр алдаа гарлаа. Дахин оролдоно уу.';button.disabled=false;button.textContent='Хүрдээ эргүүлэх'}
 });
