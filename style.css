@@ -41,6 +41,9 @@ button:focus-visible, a:focus-visible {
 }
 [hidden] { display: none !important; }
 
+/* Netlify adds this frame after the page loads. */
+iframe#nl-badge-frame { display: none !important; }
+
 .page-shell { overflow: clip; }
 
 .hero-shell {
