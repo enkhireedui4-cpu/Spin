@@ -1,4 +1,4 @@
-﻿export function createPostgresStore(db) {
+export function createPostgresStore(db) {
   async function lookup(id) {
     const rows = await db.sql`SELECT prize FROM spin_tickets WHERE participant = ${id}::uuid`;
     return rows[0]?.prize ?? null;

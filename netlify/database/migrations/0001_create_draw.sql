@@ -1,4 +1,4 @@
-﻿CREATE TABLE spin_tickets (
+CREATE TABLE spin_tickets (
   id integer PRIMARY KEY CHECK (id BETWEEN 1 AND 300),
   prize text NOT NULL CHECK (prize IN ('towel', 'freshener', 'foam', 'loss')),
   participant uuid UNIQUE,

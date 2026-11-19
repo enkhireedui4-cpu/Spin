@@ -1,4 +1,4 @@
-﻿import { randomInt } from 'node:crypto';
+import { randomInt } from 'node:crypto';
 
 /** Return a randomly ordered, finite pool for one 300-entry event. */
 export function createDrawPool(choose = randomInt) {

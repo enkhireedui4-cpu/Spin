@@ -1,4 +1,4 @@
-﻿const segments=[
+const segments=[
  {key:'towel',icon:'✦',title:'Алчуур'},{key:'loss',icon:'♡',title:'Дараа дахин'},
  {key:'freshener',icon:'✿',title:'Үнэртүүлэгч'},{key:'fuel',icon:'◈',title:'Шатахууны талон'},
  {key:'foam',icon:'✧',title:'Хөөс цэвэрлэгч'},{key:'loss',icon:'♡',title:'Дараа дахин'},

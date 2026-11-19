@@ -1,4 +1,4 @@
-﻿import { getDatabase } from '@netlify/database';
+import { getDatabase } from '@netlify/database';
 import { createDrawHandler } from '../lib/draw-handler.mjs';
 import { createPostgresStore } from '../lib/postgres-store.mjs';
 

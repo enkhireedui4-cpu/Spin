@@ -1,4 +1,4 @@
-﻿import { DatabaseSync } from 'node:sqlite';
+import { DatabaseSync } from 'node:sqlite';
 import { createDrawPool } from './draw-pool.mjs';
 
 /** Persistent allocation; all draws are serialized with a SQLite write transaction. */
