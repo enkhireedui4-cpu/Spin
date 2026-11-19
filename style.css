@@ -47,24 +47,9 @@ iframe#nl-badge-frame { display: none !important; }
 .page-shell { overflow: clip; }
 
 .hero-shell {
-  position: relative;
-  isolation: isolate;
   background:
-    radial-gradient(ellipse at 75% 28%, #233376 0%, transparent 58%),
-    linear-gradient(155deg, #121a45, var(--night) 72%);
-}
-
-.hero-shell::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #0a10337a, var(--night) 72%),
-    linear-gradient(0deg, var(--night), #0a103320 58%, #0a1033cc),
-    url("assets/erdenet-showroom.jpg") left 42% / cover no-repeat;
-  opacity: 0.42;
-  pointer-events: none;
-  content: "";
+    radial-gradient(ellipse at 75% 38%, #1d2b64, transparent 58%),
+    linear-gradient(180deg, #101837, var(--night));
 }
 
 .header, .hero, .prizes, footer {
@@ -73,7 +58,7 @@ iframe#nl-badge-frame { display: none !important; }
 }
 
 .header {
-  min-height: 86px;
+  min-height: 76px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,6 +70,9 @@ iframe#nl-badge-frame { display: none !important; }
 .wordmark img, footer img { display: block; height: auto; }
 
 .header-note {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   color: var(--chrome);
   font-size: 0.875rem;
   font-weight: 600;
@@ -93,47 +81,61 @@ iframe#nl-badge-frame { display: none !important; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   align-items: center;
-  gap: clamp(30px, 6vw, 88px);
-  padding-block: 48px 52px;
+  gap: clamp(24px, 5vw, 80px);
+  padding-block: 42px 54px;
 }
 
-.hero-copy { max-width: 440px; }
+.hero-copy::before {
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: clamp(14px, 2vw, 24px);
+  border-radius: 999px;
+  background: var(--red);
+  content: "";
+}
 
 h1, h2 {
   margin: 0;
   font-family: var(--display);
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
 }
 
-h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
+h1 {
+  font-size: clamp(2.875rem, 5.2vw, 4.5rem);
+  white-space: nowrap;
+}
 
 .lede {
-  margin: 1.25rem 0 0;
-  max-width: 35ch;
-  color: var(--chrome);
-  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  max-width: 37ch;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .game {
   display: grid;
   justify-items: center;
   min-width: 0;
-  padding: clamp(16px, 3vw, 36px);
-  background: linear-gradient(160deg, #1c2a6ed9, #0e1540f5 65%);
-  border: 1px solid #c9ced857;
+  padding: clamp(18px, 2.6vw, 32px);
+  background:
+    radial-gradient(ellipse at 50% 15%, #1f2c61, transparent 75%),
+    #101735;
+  border: 1px solid #c9ced830;
   border-radius: 24px;
-  box-shadow: 0 20px 58px #05092255;
+  box-shadow: 0 18px 45px #04081f4d;
 }
 
 .wheel-stage {
   position: relative;
   display: grid;
   place-items: center;
-  width: min(100%, 458px);
+  width: min(100%, 414px);
   aspect-ratio: 1;
 }
 
@@ -144,14 +146,14 @@ h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
   pointer-events: none;
 }
 
-.orbit-outer { inset: 0; }
-.orbit-inner { inset: 2.5%; border-color: #c9ced817; }
-.wheel-wrap { position: relative; width: 90%; aspect-ratio: 1; }
+.orbit-outer { inset: 0; border-color: #c9ced81d; }
+.orbit-inner { inset: 2%; border-color: #c9ced818; }
+.wheel-wrap { position: relative; width: 92%; aspect-ratio: 1; }
 
 .wheel-rim {
   position: absolute;
   inset: 0;
-  padding: clamp(5px, 1.2vw, 10px);
+  padding: clamp(4px, 0.65vw, 7px);
   border: 1px solid #e7ebf4;
   border-radius: 50%;
   background: conic-gradient(
@@ -190,8 +192,8 @@ h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
   z-index: 3;
   top: -2.7%;
   left: 50%;
-  width: clamp(28px, 3.2vw, 42px);
-  height: clamp(36px, 4.2vw, 53px);
+  width: clamp(25px, 3vw, 34px);
+  height: clamp(31px, 3.6vw, 43px);
   transform: translateX(-50%);
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   background: linear-gradient(#ff4961, #be0a22);
@@ -243,9 +245,9 @@ h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
 }
 
 .spin-button {
-  width: min(100%, 330px);
-  min-height: 53px;
-  margin-top: 19px;
+  width: min(100%, 318px);
+  min-height: 50px;
+  margin-top: 16px;
   padding: 0.75rem 1.25rem;
   border: 0;
   border-radius: 14px;
@@ -275,21 +277,22 @@ h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
 }
 .error:empty { display: none; }
 
-.prizes { padding-block: 10px 48px; }
-.prizes h2 { margin: 0 0 1rem; font-size: clamp(1.625rem, 3vw, 2.25rem); }
+.prizes { padding-block: 8px 48px; }
+.prizes h2 { margin: 0 0 1rem; font-size: clamp(1.5rem, 2.5vw, 1.875rem); }
 
 .prize-list {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 12px;
 }
 
 .prize-item {
   display: flex;
-  align-items: center;
-  gap: 13px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
   min-height: 80px;
-  padding: 12px;
+  padding: 15px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #131c46;
@@ -299,8 +302,8 @@ h1 { font-size: clamp(3.5rem, 6vw, 5.75rem); }
   display: grid;
   place-items: center;
   flex: none;
-  width: 46px;
-  height: 46px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: #282f60;
   color: #dce3ff;
@@ -370,18 +373,20 @@ footer {
 .result-card p { color: var(--chrome); }
 .result-button { color: var(--chrome); font-size: 0.875rem; }
 
-@media (max-width: 780px) {
+@media (max-width: 850px) {
   .header, .hero, .prizes, footer { width: min(540px, calc(100% - 32px)); }
   .header { min-height: 66px; }
   .wordmark img { width: 118px; }
-  .hero { grid-template-columns: 1fr; gap: 22px; padding-block: 25px 28px; }
+  .hero { grid-template-columns: 1fr; gap: 22px; padding-block: 28px 32px; }
   .hero-copy { margin-inline: auto; text-align: center; }
-  h1 { font-size: clamp(2.65rem, 10vw, 3.75rem); }
-  .lede { margin: 0.55rem auto 0; line-height: 1.5; }
+  .hero-copy::before { margin-inline: auto; width: 28px; }
+  h1 { font-size: clamp(2.375rem, 10vw, 3.375rem); }
+  .lede { margin: 0.625rem auto 0; line-height: 1.5; }
   .game { padding: 15px 14px 16px; }
   .wheel-stage { width: min(100%, 352px); }
   .spin-button { width: min(100%, 330px); margin-top: 13px; }
   .prize-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .prize-item { flex-direction: row; align-items: center; }
 }
 
 @media (max-width: 440px) {
