@@ -12,7 +12,7 @@ for (const [i,s] of segments.entries()) {
  const el=document.createElement('div');el.className='segment';el.style.setProperty('--angle',`${i*45+22.5}deg`);
  const icon=document.createElement('span');icon.className='segment-icon';icon.textContent=s.icon;
  const title=document.createElement('span');title.textContent=s.title;el.append(icon,title);
- if(s.key==='fuel'||s.key==='gift'){const small=document.createElement('small');small.textContent='Дууссан';el.append(small)}
+ if(s.key==='fuel'||s.key==='gift'){const small=document.createElement('small');small.textContent='Ороогүй';el.append(small)}
  wheel.insertBefore(el,wheel.querySelector('.hub'));
 }
 function reveal(prize){
