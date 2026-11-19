@@ -7,3 +7,9 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy = "script-src 'self'"
